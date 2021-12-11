@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
 //mongoDB connection
-dbUrl = "mongodb+srv://prateek:prateek2606@freecluster.0qnz4.mongodb.net/crosssite";
+dbUrl = "mongodb+srv://vishvas:administrator04@cluster0.rjoxi.mongodb.net/crosssite";
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function(error, script) {
     if (error) {
         console.log("error is ", err);
@@ -67,7 +67,7 @@ app.post('/login', (req, res) => {
         } else {
             //console.log(user);
             if (user.password === req.body.password) {
-                res.render('secret', { message: "successfully logged in" });
+                res.render('homepage');
             } else {
                 res.render('login', { message: "login failed" });
             }
